@@ -82,7 +82,7 @@ font-size: 20px;
 	<div id="wrapper-Project">
 		<!-- 내프로젝트를 눌렀을때 보여지는 첫 화면  -->
 		<div class="search_Project">
-			<div class="project_content" style="font-size: 25px;"><%=loginMember.getMemberId()%>님의 프로젝트</div>
+			<div class="project_content" style="font-size: 25px;"><%=loginMember.getMemberName()%>님의 프로젝트</div>
 			<div style="display: inline-block;">
 				<select name="search-project-op" class="form-select">
 					<option value="projectTitle">프로젝트 명</option>

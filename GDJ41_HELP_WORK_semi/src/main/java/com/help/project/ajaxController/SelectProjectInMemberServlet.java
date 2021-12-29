@@ -44,9 +44,12 @@ public class SelectProjectInMemberServlet extends HttpServlet {
 		//해당 프로젝트 작성자 가져오기
 		Project pinfo = new ProjectService().selectProjectOne(projectNo);
 		
+		System.out.println(pinfo);
+		
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("proMemberList", proMemberList);
-		data.put("creatorId", pinfo.getMemberId());
+		data.put("creatorId", pinfo.getMemberName());
+		
 		
 		response.setContentType("application/json; charset=utf-8");
 		new Gson().toJson(data,response.getWriter());

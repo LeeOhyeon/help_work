@@ -220,7 +220,7 @@ function proInMemberList(){
       data : {"projectNo":projectNo},
       dataType:"json",
       success:data=>{
-         
+        console.log(data);
          const creatorId = data["creatorId"];
          $("#proCreator").html("<i class='far fa-user-circle'></i>&nbsp;"+creatorId);
          

@@ -210,7 +210,7 @@ public class ProjectDao {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				p = Project.builder().projectNo(rs.getInt("PROJECT_NO")).memberId(rs.getString("MEMBER_ID"))
-						.proName(rs.getString("PRO_NAME")).proExplain(rs.getString("PRO_EXPLAIN"))
+						.proName(rs.getString("PRO_NAME")).proExplain(rs.getString("PRO_EXPLAIN")).memberName(rs.getString("MEMBER_NAME"))
 						.proCommonYn(rs.getString("PRO_COMMON_YN")).proIsActive(rs.getString("PRO_ISACTIVE"))
 						.proDate(rs.getDate("PRO_DATE")).build();
 			}

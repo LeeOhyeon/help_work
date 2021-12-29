@@ -10,7 +10,7 @@
 
 %>
 <style>
-table.attendanceType {
+table#attendanceType {
 
   text-align: center;
   line-height: 1.5;
@@ -19,7 +19,7 @@ table.attendanceType {
 }
 
 
-table.attendanceType thead th {
+table#attendanceType thead tr th {
   padding: 10px;
   font-weight: bold;
   vertical-align: top;
@@ -28,7 +28,7 @@ table.attendanceType thead th {
 }
 
 
-table.attendanceType td {
+table#attendanceType tbody tr td {
   
   padding: 10px;
   vertical-align: top;
@@ -85,7 +85,7 @@ border-radius:30px;
 		</form>
 	</div><br><br>
 	<div id="tableDiv">
-		<table class="attendanceType">
+		<table id="attendanceType">
 			<thead>
 				<tr>
 		    		<th>날짜</th>
@@ -128,21 +128,21 @@ border-radius:30px;
 	$("#selectMonth").text(date);
 
  	$("#checkMonth").change(e=>{
- 	 	$("#ajaxTable").hide();
 		var check2 = $("#checkMonth").val();
 		var date = moment(check2).format('yyyy년 MM월');
 		$("#selectMonth").text(date);
     	const memberId ="<%=loginMember.getMemberId()%>";
     	$("#selectMonth").val($("#checkMonth").val());
 		let month = $("#checkMonth").val();
-   
-    	 $.ajax({
+   		let table = $('tbody[id="attendanceType"]');
+    	 
+   		$.ajax({
     		url : "<%=request.getContextPath()%>/attendance/attendanceListEnd.do",
     		type:'post',
 			data : {"memberId":memberId,"month":month},
 			dataType : 'json',
             success:data=>{
- 	 			$("#ajaxTable").show();
+ 	 			$("#ajaxTable").html("");
 				let tbody=$('tbody[id="ajaxTable"]');
 				tbody.empty();
 				if(data.length==0){
@@ -152,15 +152,18 @@ border-radius:30px;
 					tr.css("text-align","center");
 					tr.append(ntd);
 					tbody.append(tr);
+					table.append(tbody);
 				}else{
 					for(let i=0; i<data.length; i++){
-						let tr=$("<tr>");
+						let tr2=$("<tr>");
 						let attDate=$("<td>").html(data[i]["attDate"]);
 						let attTime=$("<td>").html(data[i]["attTime"]);
 						let leaveTime=$("<td>").html(data[i]["leaveTime"]);
 						let attStatus=$("<td>").html(data[i]["attStatus"]);
-						tr.append(attDate).append(attTime).append(leaveTime).append(attStatus);
-						tbody.append(tr);
+						tr2.append(attDate).append(attTime).append(leaveTime).append(attStatus);
+						tbody.append(tr2);
+						table.append(tbody);
+						
 					}	
 				}
 				$("#tableDiv").html($("#attendanceType"));

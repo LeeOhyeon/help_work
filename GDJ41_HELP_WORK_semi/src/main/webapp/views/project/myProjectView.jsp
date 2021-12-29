@@ -41,14 +41,15 @@
 }
 
 .project_content_ing {
-	width: 210px;
-	height: 210px;
+	width: 260px;
+	height: 260px;
 	float: left;
 	margin: 10px 10px;
 	border-radius: 30px;
 	padding: 20px;
 	overflow: hidden;
 	border: 1px solid #6308f575;
+	position: relative;
 }
 .project_content_ing:hover {
 	color:black;
@@ -73,6 +74,10 @@ font-size: 20px;
  	border:1px solid #6710f242;
     color: #6710f242;
     background-color: #6710f242;
+}
+.countp{
+ position: absolute;
+ top:200px;
 }
 </style>
 
@@ -117,9 +122,8 @@ font-size: 20px;
 							<div class="project_content" style="text-align: right;"><%=p.getProjectNo() %></div>
 							<div class="project_content" style="font-size: 23px;"><%=p.getProName() %></div>
 							<div style="font-family:'Do Hyeon';font-size:16px; height: 50px; overflow: hidden; font-family: 'Nanum Gothic'; "><%=p.getProExplain() %></div>
-							<div class="project_content" style="font-size: 16px;"><i class="fas fa-user-edit"></i>&nbsp;<%=p.getMemberId() %></div>
 							
-							<div class="project_content" style="font-size: 16px;"><i class="fas fa-users"></i>&nbsp;<%=joinNum.get(p.getProjectNo()) %></div>
+							<div class="project_content countp" style="font-size: 16px; height: 30px;"><i class="fas fa-users"></i>&nbsp;<%=joinNum.get(p.getProjectNo()) %></div>
 						</div>
 					</div>
 				
@@ -154,12 +158,11 @@ font-size: 20px;
 					for(let i=0;i<data.length;i++){
 						console.log(data[i]);
 						let div=$("<div class='project_content_ing' style='cursor:pointer;' onclick='pageTrans(this);'>");
-						let proNo=$("<div>").html(data[i]["projectNo"]);
-						let proName=$("<div>").html(data[i]["proName"]);
-						let proExp=$("<div>").html(data[i]["proExplain"]);
-						let writer=$("<div>").html(data[i]["memberName"]);
-						let memCount=$("<div>").html("참여인원:"+findCount(data[i]["projectNo"]));
-						div.append(proNo).append(proName).append(proExp).append(writer).append(memCount);
+						let proNo=$("<div  class='project_content' style='text-align: right;'>").html(data[i]["projectNo"]);
+						let proName=$("<div  class='project_content' style='font-size: 23px;'>").html(data[i]["proName"]);
+						let proExp=$("<div style='font-family:'Do Hyeon';font-size:16px; height: 50px; overflow: hidden; font-family: 'Nanum Gothic';'>").html(data[i]["proExplain"]);
+						let memCount=$("<div class='project_content countp' style='font-size: 16px;'>").html("<i class='fas fa-users'></i> 참여인원:"+findCount(data[i]["projectNo"]));
+						div.append(proNo).append(proName).append(proExp).append(memCount);
 						div0.append(div);
 					}
 					$("div[name=searchView]").html(div0); //여기다출력해

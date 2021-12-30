@@ -61,6 +61,8 @@ public class SelectWorkAllSearchServlet extends HttpServlet {
 		//페이징 처리해서 가져온 목록
 		List<WorkSelectManagerJoin> resultList=new WorkService().searchMine(ing, prior, h4,logId,cPage,numPerPage);
 		
+	
+		
 		int totalPage=(int)Math.ceil((double)totalData/numPerPage);
 		int pageBarSize=5;
 		int pageNo=((cPage-1)/pageBarSize)*pageBarSize+1;//시작

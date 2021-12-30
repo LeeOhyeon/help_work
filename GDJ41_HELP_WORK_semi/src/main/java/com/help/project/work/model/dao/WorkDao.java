@@ -207,7 +207,7 @@ public class WorkDao {
 							.projectNo(rs.getInt("PROJECT_NO")).workIng(rs.getString("WORK_ING"))
 							.workRank(rs.getString("WORK_RANK")).workTitle(rs.getString("WORK_TITLE"))
 							.memberId(rs.getString("MEMBER_ID")).managerId(rs.getString("MANAGER_ID"))
-							.workDate(new SimpleDateFormat("YYYY-MM-dd").format(rs.getDate("WORK_DATE"))).build();
+							.workDate(new SimpleDateFormat("yyyy-MM-dd").format(rs.getDate("WORK_DATE"))).build();
 					works.add(wo);
 				}
 				// works.put(p.getProjectNo(), w);//플젝번호-해당업무들
@@ -243,7 +243,7 @@ public class WorkDao {
 							.projectNo(rs.getInt("PROJECT_NO")).workIng(rs.getString("WORK_ING"))
 							.workRank(rs.getString("WORK_RANK")).workTitle(rs.getString("WORK_TITLE"))
 							.memberId(rs.getString("MEMBER_ID")).managerId(rs.getString("MANAGER_ID"))
-							.workDate(new SimpleDateFormat("YYYY-MM-dd").format(rs.getDate("WORK_DATE"))).build();
+							.workDate(new SimpleDateFormat("yyyy-MM-dd").format(rs.getDate("WORK_DATE"))).build();
 					works.add(wo);
 				}
 				// works.put(p.getProjectNo(), w);//플젝번호-해당업무들
@@ -294,7 +294,7 @@ public class WorkDao {
 						.projectNo(rs.getInt("PROJECT_NO")).workIng(rs.getString("WORK_ING"))
 						.workRank(rs.getString("WORK_RANK")).workTitle(rs.getString("WORK_TITLE"))
 						.memberId(rs.getString("MEMBER_ID")).managerId(rs.getString("MANAGER_ID"))
-						.workDate(new SimpleDateFormat("YYYY-MM-dd").format(rs.getDate("WORK_DATE"))).build();
+						.workDate(new SimpleDateFormat("yyyy-MM-dd").format(rs.getDate("WORK_DATE"))).build();
 				result.add(wo);
 			}
 
@@ -348,9 +348,8 @@ public class WorkDao {
 							.projectNo(rs.getInt("PROJECT_NO")).workNo(rs.getInt("WORK_NO"))
 							.workIng(rs.getString("WORK_ING")).workRank(rs.getString("WORK_RANK"))
 							.workTitle(rs.getString("WORK_TITLE")).memberId(rs.getString("MEMBER_ID"))
-							.workDate(new SimpleDateFormat("YYYY-MM-dd").format(rs.getDate("WORK_DATE"))).build();
+							.workDate(new SimpleDateFormat("yyyy-MM-dd").format(rs.getDate("WORK_DATE"))).build();
 					result.add(j);
-
 				}
 
 			}
@@ -380,7 +379,7 @@ public class WorkDao {
 							.projectNo(rs.getInt("PROJECT_NO")).workNo(rs.getInt("WORK_NO"))
 							.workIng(rs.getString("WORK_ING")).workRank(rs.getString("WORK_RANK"))
 							.workTitle(rs.getString("WORK_TITLE")).memberId(rs.getString("MEMBER_ID"))
-							.workDate(new SimpleDateFormat("YYYY-MM-dd").format(rs.getDate("WORK_DATE"))).build();
+							.workDate(new SimpleDateFormat("yyyy-MM-dd").format(rs.getDate("WORK_DATE"))).build();
 					result.add(j);
 				}
 		} catch (SQLException e) {
@@ -434,7 +433,7 @@ public class WorkDao {
 						.projectNo(rs.getInt("PROJECT_NO")).workIng(rs.getString("WORK_ING"))
 						.workRank(rs.getString("WORK_RANK")).workTitle(rs.getString("WORK_TITLE"))
 						.memberId(rs.getString("MEMBER_ID"))
-						.workDate(new SimpleDateFormat("YYYY-MM-dd").format(rs.getDate("WORK_DATE"))).build();
+						.workDate(new SimpleDateFormat("yyyy-MM-dd").format(rs.getDate("WORK_DATE"))).build();
 				result.add(wo);
 			}
 
@@ -487,7 +486,7 @@ public class WorkDao {
 							.projectNo(rs.getInt("PROJECT_NO")).workIng(rs.getString("WORK_ING"))
 							.workRank(rs.getString("WORK_RANK")).workTitle(rs.getString("WORK_TITLE"))
 							.memberId(rs.getString("MEMBER_ID"))
-							.workDate(new SimpleDateFormat("YYYY-MM-dd").format(rs.getDate("WORK_DATE"))).build();
+							.workDate(new SimpleDateFormat("yyyy-MM-dd").format(rs.getDate("WORK_DATE"))).build();
 					result.add(wo);
 				}
 			}
@@ -514,7 +513,7 @@ public class WorkDao {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				temp = WorkDetailJoin.builder().proName(rs.getString("PRO_NAME"))
-						.proDate(new SimpleDateFormat("YYYY-MM-dd").format(rs.getDate("PRO_DATE"))).build();
+						.proDate(new SimpleDateFormat("yyyy-MM-dd").format(rs.getDate("PRO_DATE"))).build();
 				// 프로젝트 이름, 프로젝트 생성 시간
 			}
 		} catch (SQLException e) {
@@ -539,8 +538,8 @@ public class WorkDao {
 			if (rs.next()) {
 				temp1 = WorkDetailJoin.builder().workNo(rs.getInt("WORK_NO")).workTitle(rs.getString("WORK_TITLE"))
 						.workContent(rs.getString("WORK_CONTENT"))
-						.startDate(new SimpleDateFormat("YYYY-MM-dd").format(rs.getDate("WORK_START_DATE")))
-						.endDate(new SimpleDateFormat("YYYY-MM-dd").format(rs.getDate("WORK_END_DATE")))
+						.startDate(new SimpleDateFormat("yyyy-MM-dd").format(rs.getDate("WORK_START_DATE")))
+						.endDate(new SimpleDateFormat("yyyy-MM-dd").format(rs.getDate("WORK_END_DATE")))
 						.workIng(rs.getString("WORK_ING")).workRank(rs.getString("WORK_RANK"))
 						.proName(temp.getProName()).proDate(temp.getProDate()).build();
 			}

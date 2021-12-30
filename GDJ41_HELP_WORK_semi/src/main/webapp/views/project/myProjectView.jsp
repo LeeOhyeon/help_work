@@ -167,7 +167,7 @@ font-size: 20px;
 					}
 					$("div[name=searchView]").html(div0); //여기다출력해
 				}else{
-					alert("검색 결과가 없어요~~!")
+					alert("조회된 결과가 없습니다.")
 				}
 			}
 		});

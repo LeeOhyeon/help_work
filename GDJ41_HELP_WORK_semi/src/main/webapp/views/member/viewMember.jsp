@@ -109,20 +109,21 @@ img {
 						</td>
 					</tr>	
 				</table>
+			<div class="inner" style="width:100%; display: flex; justify-content: center;">
+				<div style="width: 40%; text-align: center;">
+					<div style="width: 100%; display: inline-block;">
+						<input type="button" value="비밀번호 변경" class="btn btn-outline-secondary" id="pwChangeBtn" onclick="updatePassword();" style="width: 100%;">
+					</div>
+					<div style="width: 100%; display: inline-block; ">
+						<input type="submit" value="회원정보수정" class="btn btn-outline-secondary" style="width: 100%">
+					</div>
+				</div>
+			</div>
 				</form>
 	    		</div>
 	<!-- 			<input type="submit" value="회원정보수정" >
 				<input type="button" value="비밀번호 변경" id="pwChangeBtn" onclick="updatePassword();"> -->
-				<div class="inner" style="width:100%; display: flex; justify-content: center;">
-					<div style="width: 40%; text-align: center;">
-						<div style="width: 30%; display: inline-block;margin-left: 40px;">
-							<input type="button" value="비밀번호 변경" class="btn btn-outline-secondary" id="pwChangeBtn" onclick="updatePassword();" style="width: 100%;">
-						</div>
-						<div style="width: 30%; display: inline-block; ">
-							<input type="submit" value="회원정보수정" class="btn btn-outline-secondary" style="width: 100%">
-						</div>
-					</div>
-			</div>
+			
 		</div>
 		
 	</main>

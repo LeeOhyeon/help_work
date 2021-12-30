@@ -38,7 +38,7 @@ public class UpdatePasswordEndServlet extends HttpServlet {
 		//현재 비밀번호가 맞는지 확인
 		Member m=new MemberService().login(memberId,curPassword);
 		if(m!=null) {
-			String newPassword=request.getParameter("memberPwd_new");
+			String newPassword=request.getParameter("password_new");
 			//현재 비밀번호가 일치
 			int result=new MemberService().updatePassword(memberId,newPassword);
 			if(result>0) {

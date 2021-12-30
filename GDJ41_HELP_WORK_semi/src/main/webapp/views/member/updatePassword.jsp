@@ -106,9 +106,9 @@
 	   			}
 	   		});
 	   	});
-	   	const el=document.querySelector("#btn").addEventListener("click",e=>{
+	   	/* const el=document.querySelector("#btn").addEventListener("click",e=>{
 			close();
-		});
+		}); */
 	
 	</script>
 </body>

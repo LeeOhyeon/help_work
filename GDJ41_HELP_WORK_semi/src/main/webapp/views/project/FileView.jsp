@@ -130,7 +130,7 @@
 		$("#SearchResult").show();
 		let proNo=<%=p.getProjectNo()%>;//프로젝트번호 
 		//테이블
-		let table=$("<table class='table'>");
+		let table=$("<table class='mytable'>");
 		let tr=$("<tr>");
 		let th=$("<th>").html("게시글 제목");
 		let th1=$("<th>").html("첨부된 파일");

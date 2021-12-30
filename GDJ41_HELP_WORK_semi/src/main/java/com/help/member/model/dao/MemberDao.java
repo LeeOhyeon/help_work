@@ -295,7 +295,7 @@ public class MemberDao {
 	public String findMemberId(Connection conn,String memberName,String memberPhone) {
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		String userId=null;
+		String memberId=null;
 		String sql=prop.getProperty("findMemberId");
 		try {
 			pstmt=conn.prepareStatement(sql);
@@ -303,7 +303,7 @@ public class MemberDao {
 			pstmt.setString(2, memberPhone);
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
-				userId = rs.getString("MEMBER_ID"); 
+				memberId = rs.getString("MEMBER_ID"); 
 			}
 			
 		}catch(SQLException e) {
@@ -312,7 +312,7 @@ public class MemberDao {
 			close(rs);
 			close(pstmt);
 		}
-		return userId;
+		return memberId;
 	}
 	
 	
